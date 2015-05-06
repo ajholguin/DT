@@ -298,5 +298,13 @@ HTMLWidgets.widget({
     };
     table.on('draw.dt', updateTableInfo);
     updateTableInfo();
+
+    // the current cell double clicked on
+    table.on('dblclick', 'tbody td', function() {
+      var info = table.cell(this).index();
+      info.row += 1;
+      changeInput('cell', info);
+    });
+    changeInput('cell', {});
   }
 });
