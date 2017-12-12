@@ -959,7 +959,7 @@ HTMLWidgets.widget({
           return;
         }
         $(td).find('input').first().val(v);
-        table.column(i).search(v);
+        table.column(i).search(v, true, false, true);
       });
       table.draw();
     }
